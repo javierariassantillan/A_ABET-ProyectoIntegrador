@@ -1,0 +1,48 @@
+﻿@model RubiaDivina.Models.Categoria
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-form-card">
+        <div class="insta-form-header mb-4">
+            <h1 class="insta-main-title">
+                <i class="fas fa-tag me-2"></i>Nueva Categoría
+            </h1>
+            <p class="insta-subtitle">Crea una nueva categoría para tus productos</p>
+            <hr class="insta-hr">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Create" class="insta-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="Nombre" class="insta-label">
+                            <i class="fas fa-pencil-alt me-2"></i>Nombre de la categoría
+                        </label>
+                        <input asp-for="Nombre" class="insta-input" placeholder="Ej: Cafés Especiales">
+                        <span asp-validation-for="Nombre" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-footer mt-5">
+                        <button type="submit" class="insta-submit-btn">
+                            <i class="fas fa-save me-2"></i>Crear Categoría
+                        </button>
+                        <a asp-action="Index" class="insta-cancel-link">
+                            <i class="fas fa-arrow-left me-2"></i>Volver al Listado
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

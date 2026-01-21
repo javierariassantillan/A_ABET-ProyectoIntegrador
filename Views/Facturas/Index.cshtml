@@ -1,0 +1,89 @@
+﻿@model IEnumerable<RubiaDivina.Models.Factura>
+@using System.Globalization
+@{
+    ViewData["Title"] = "Factura";
+}
+
+<div class="container insta-container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="insta-main-title">@ViewData["Title"]</h1>
+        <a asp-action="Create" class="btn insta-floating-btn">
+            <i class="fas fa-file-invoice-dollar me-2"></i>Nueva Factura
+        </a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col mb-4">
+                <div class="card insta-receipt shadow-sm">
+                    <div class="card-body">
+                        <div class="receipt-header mb-3">
+                            <div class="text-center mb-3">
+                                <h5 class="insta-title">Rubia Divina</h5>
+                                <small class="text-muted">Coffee & Beer Experience</small>
+                            </div>
+                            <hr class="receipt-hr">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <small class="text-muted">Factura #@item.Id</small>
+                                </div>
+                                <div>
+                                    <small>@item.FechaFactura?.ToString("dd'/'MM'/'yyyy")</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="receipt-body">
+                            <div class="receipt-item">
+                                <span class="receipt-label">Pedido #@item.Pedido?.Id</span>
+                            </div>
+
+                            @if (item.Pedido?.Cliente != null)
+                            {
+                                <div class="receipt-item">
+                                    <span class="receipt-label">Cliente:</span>
+                                    <span class="receipt-value">@item.Pedido.Cliente.Nombre @item.Pedido.Cliente.Apellido</span>
+                                </div>
+                            }
+
+                            @if (item.Pedido?.Producto != null)
+                            {
+                                <div class="receipt-item">
+                                    <span class="receipt-label">Producto:</span>
+                                    <span class="receipt-value">@item.Pedido.Producto.Nombre</span>
+                                </div>
+                            }
+
+                            <hr class="receipt-hr">
+
+                            <div class="receipt-total">
+                                <span class="receipt-label">Total:</span>
+                                <span class="receipt-value">
+                                    @item.Pedido?.ValorTotal?.ToString("C", CultureInfo.CreateSpecificCulture("es-CO"))
+                                </span>
+                            </div>
+
+                            <div class="receipt-email-status">
+                                <i class="fas @(item.EnviarEmail ? "fa-check-circle text-success" : "fa-times-circle text-danger")"></i>
+                                <small>Email @(item.EnviarEmail ? "Enviado" : "Pendiente")</small>
+                            </div>
+                        </div>
+
+                        <div class="receipt-actions mt-3">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm insta-edit-btn">
+                                <i class="fas fa-edit">Editar</i>
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm insta-details-btn">
+                                <i class="fas fa-eye">Info</i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm insta-delete-btn">
+                                <i class="fas fa-trash-alt">Borrar</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

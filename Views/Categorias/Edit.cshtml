@@ -1,0 +1,49 @@
+﻿@model RubiaDivina.Models.Categoria
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-form-card">
+        <div class="insta-form-header mb-4">
+            <h1 class="insta-main-title">
+                <i class="fas fa-tag me-2"></i>Editar Categoría
+            </h1>
+            <p class="insta-subtitle">Modifica los detalles de la categoría</p>
+            <hr class="insta-hr">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Edit" class="insta-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="insta-form-group">
+                        <label asp-for="Nombre" class="insta-label">
+                            <i class="fas fa-pencil-alt me-2"></i>Nombre de la categoría
+                        </label>
+                        <input asp-for="Nombre" class="insta-input" placeholder="Ej: Cafés Premium">
+                        <span asp-validation-for="Nombre" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-footer mt-5">
+                        <button type="submit" class="insta-submit-btn insta-update-btn">
+                            <i class="fas fa-save me-2"></i>Guardar Cambios
+                        </button>
+                        <a asp-action="Index" class="insta-cancel-link">
+                            <i class="fas fa-times me-2"></i>Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,641 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fdf8f3;
+    color: #3e2c2c;
+}
+
+.navbar {
+    background-color: #fff0e6;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #a0522d;
+}
+
+.hero {
+    color: dimgray;
+    padding: 8rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero a {
+        color: #f8d347;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+        .hero a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+.section-title {
+    color: #a0522d;
+    margin-top: 40px;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+/*No se si borrar esto de aca*/
+footer {
+    background-color: #fff0e6;
+    padding: 20px 0;
+    color: #5a3e36;
+    position: page;
+}
+/*Esto es del home para las imagenes*/
+#RubiaDivina {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    height: auto;
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(160, 82, 45, 0.6);
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(0) invert(1);
+    width: 24px;
+    height: 24px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    background-color: rgba(160, 82, 45, 0.9);
+}
+
+@media (max-width: 768px) {
+    .carousel-inner {
+        max-height: 50vh;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+/*Esto es para los index */
+.insta-card {
+    border: 1px solid #e6e6e6;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    background: #fff;
+}
+
+    .insta-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+.insta-card-img {
+    border-radius: 15px 15px 0 0;
+    height: 300px;
+    object-fit: cover;
+}
+
+.insta-title {
+    color: #3e2c2c;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.insta-price {
+    color: #a0522d;
+    font-weight: 700;
+}
+
+.insta-category {
+    background: #fff0e6;
+    color: #a0522d;
+    font-weight: 500;
+}
+
+.insta-btn {
+    background: #a0522d;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+.insta-edit-btn {
+    color: #a0522d;
+    border-color: #a0522d;
+}
+
+.insta-details-btn {
+    color: #f8d347;
+    border-color: #f8d347;
+}
+
+.insta-delete-btn {
+    color: #ff2f00;
+    border-color: #ff2f00;
+}
+
+.btn-group .btn {
+    padding: 0.25rem 0.5rem;
+    margin: 0 2px;
+}
+
+.profile-header {
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 1.5rem;
+}
+
+/* Estilos para crear un producto */
+.insta-form-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+}
+
+.insta-form-header {
+    text-align: center;
+}
+
+.insta-main-title {
+    color: #3e2c2c;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.insta-subtitle {
+    color: #a0522d;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.insta-hr {
+    border-color: #fff0e6;
+    margin: 1.5rem auto;
+    width: 60%;
+}
+
+.insta-form-group {
+    margin-bottom: 1.8rem;
+}
+
+.insta-label {
+    color: #3e2c2c;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.insta-input,
+.insta-select {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #fff0e6;
+    border-radius: 10px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+    .insta-input:focus,
+    .insta-select:focus {
+        border-color: #a0522d;
+        box-shadow: 0 0 0 3px rgba(160,82,45,0.1);
+        outline: none;
+    }
+
+.insta-validation {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+    display: block;
+}
+
+.insta-form-footer {
+    text-align: center;
+    border-top: 1px solid #fff0e6;
+    padding-top: 2rem;
+}
+
+.insta-submit-btn {
+    background: #a0522d;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+    .insta-submit-btn:hover {
+        background: #8a4528;
+        transform: translateY(-2px);
+    }
+
+.insta-cancel-btn {
+    color: #3e2c2c;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #fff0e6;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+    .insta-cancel-btn:hover {
+        background: #fff0e6;
+        color: #a0522d;
+    }
+
+@@media (max-width: 768px) {
+    .insta-form-card {
+        padding: 1.5rem;
+    }
+
+    .insta-form-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .insta-cancel-btn {
+        margin-left: 0;
+    }
+}
+
+/* Estilos para eliminar un producto */
+.insta-delete-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    border: 2px solid #ffe5e5;
+}
+
+.insta-delete-header {
+    text-align: center;
+}
+
+    .insta-delete-header .insta-main-title {
+        color: #dc3545;
+        font-size: 2rem;
+    }
+
+.insta-delete-details {
+    background: #fffafa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.insta-detail-item {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+}
+
+.insta-detail-label {
+    color: #3e2c2c;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.insta-detail-value {
+    color: #a0522d;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: block;
+    padding-left: 1.8rem;
+}
+
+.insta-delete-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.insta-delete-btn {
+    background: #dc3545;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+    .insta-delete-btn:hover {
+        background: #c82333;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(220,53,69,0.3);
+    }
+
+.insta-cancel-link {
+    color: #3e2c2c;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #fff0e6;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+    .insta-cancel-link:hover {
+        background: #fff0e6;
+        color: #a0522d;
+    }
+
+@@media (max-width: 768px) {
+    .insta-delete-card {
+        padding: 1.5rem;
+    }
+
+    .insta-delete-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .insta-detail-value {
+        padding-left: 0;
+    }
+}
+/* Estilos de editar */
+.insta-update-btn {
+    background: #f8d347;
+    color: #3e2c2c;
+}
+
+    .insta-update-btn:hover {
+        background: #e6c030;
+        color: #3e2c2c;
+    }
+
+.insta-form-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    border: 2px solid #fff0e6;
+}
+
+.insta-form-header .insta-main-title {
+    color: #f8d347;
+}
+
+@@media (max-width: 768px) {
+    .insta-form-card {
+        padding: 1.5rem;
+    }
+
+    .insta-form-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+/* Estilos para detalles */
+.insta-details-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    border: 2px solid #fff0e6;
+}
+
+.insta-details-header {
+    text-align: center;
+}
+
+    .insta-details-header .insta-main-title {
+        color: #a0522d;
+        font-size: 2rem;
+    }
+
+.insta-detail-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.insta-detail-item {
+    margin-bottom: 1.8rem;
+    padding: 1rem;
+    background: #fffafa;
+    border-radius: 8px;
+}
+
+.insta-detail-label {
+    color: #3e2c2c;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.insta-detail-value {
+    color: #a0522d;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-left: 1.8rem;
+}
+
+.insta-details-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    border-top: 1px solid #fff0e6;
+    padding-top: 2rem;
+}
+
+.insta-edit-btn {
+    background: #f8d347;
+    color: #a0522d;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+    .insta-edit-btn:hover {
+        background: #e6c030;
+        transform: translateY(-2px);
+    }
+
+.insta-cancel-link {
+    color: #3e2c2c;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #fff0e6;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+    .insta-cancel-link:hover {
+        background: #fff0e6;
+        color: #a0522d;
+    }
+
+@@media (max-width: 768px) {
+    .insta-details-card {
+        padding: 1.5rem;
+    }
+
+    .insta-detail-value {
+        padding-left: 0;
+    }
+
+    .insta-details-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Estilos para facturas queria que parezcan unos recibos */
+.insta-receipt {
+    background: #fff;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.receipt-header {
+    border-bottom: 2px dashed #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+.receipt-hr {
+    border-top: 1px dashed #e0e0e0;
+    margin: 0.5rem 0;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.receipt-label {
+    color: #3e2c2c;
+    font-weight: 600;
+}
+
+.receipt-value {
+    color: #a0522d;
+}
+
+.receipt-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: #fff0e6;
+    border-radius: 5px;
+}
+
+.receipt-email-status {
+    text-align: center;
+    margin-top: 1rem;
+    color: #3e2c2c;
+}
+
+/* esto es opcional, no se si sirva sin estos estilos, pero son los de los demas puntos basicamente */
+.insta-floating-btn {
+    background: #a0522d;
+    color: white;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+    .insta-floating-btn:hover {
+        background: #8a4528;
+        transform: translateY(-2px);
+    }
+
+.insta-edit-btn {
+    color: #a0522d;
+    border: 1px solid #a0522d;
+}
+
+.insta-details-btn {
+    color: #3e2c2c;
+}
+
+.receipt-actions {
+    border-top: 2px dashed #e0e0e0;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+@@media (max-width: 768px) {
+    .insta-receipt {
+        font-size: 0.9rem;
+    }
+
+    .receipt-item {
+        flex-direction: column;
+    }
+}

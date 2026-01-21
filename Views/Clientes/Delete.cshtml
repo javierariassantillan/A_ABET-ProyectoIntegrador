@@ -1,0 +1,72 @@
+﻿@model RubiaDivina.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-delete-card">
+        <div class="insta-delete-header mb-4">
+            <h1 class="insta-main-title text-danger">
+                <i class="fas fa-exclamation-triangle me-2"></i>Eliminar Cliente
+            </h1>
+            <p class="insta-subtitle">¿Estás seguro de eliminar este cliente permanentemente?</p>
+            <hr class="insta-hr">
+        </div>
+
+        <div class="insta-delete-details">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-user me-2"></i>Nombre:
+                        </div>
+                        <div class="insta-detail-value">@Model.Nombre</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-user-tag me-2"></i>Apellido:
+                        </div>
+                        <div class="insta-detail-value">@Model.Apellido</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-calendar-alt me-2"></i>Fecha Registro:
+                        </div>
+                        <div class="insta-detail-value">@Model.FechaCreacion.ToString("dd MMM yyyy")</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-mobile-alt me-2"></i>Teléfono:
+                        </div>
+                        <div class="insta-detail-value">@Model.Telefono</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-envelope me-2"></i>Correo:
+                        </div>
+                        <div class="insta-detail-value">@Model.Correo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form asp-action="Delete" class="mt-5">
+            <input type="hidden" asp-for="Id" />
+            <div class="insta-delete-actions">
+                <button type="submit" class="insta-delete-btn">
+                    <i class="fas fa-trash-alt me-2"></i>Confirmar Eliminación
+                </button>
+                <a asp-action="Index" class="insta-cancel-link">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al Listado
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

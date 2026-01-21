@@ -1,0 +1,79 @@
+﻿@model RubiaDivina.Models.Producto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-form-card">
+        <!-- Header -->
+        <div class="insta-form-header mb-4">
+            <h1 class="insta-main-title">
+                <i class="fas fa-edit me-2"></i>Editar Producto
+            </h1>
+            <p class="insta-subtitle">Actualiza la información del producto</p>
+            <hr class="insta-hr">
+        </div>
+
+        <!-- Formulario -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form asp-action="Edit" class="insta-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <!-- Campos del formulario -->
+                    <div class="insta-form-group">
+                        <label asp-for="Nombre" class="insta-label">
+                            <i class="fas fa-tag me-2"></i>Nombre del Producto
+                        </label>
+                        <input asp-for="Nombre" class="insta-input" placeholder="Nombre del producto">
+                        <span asp-validation-for="Nombre" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="Precio" class="insta-label">
+                            <i class="fas fa-dollar-sign me-2"></i>Precio
+                        </label>
+                        <input asp-for="Precio" class="insta-input" placeholder="Precio unitario">
+                        <span asp-validation-for="Precio" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="Stock" class="insta-label">
+                            <i class="fas fa-boxes me-2"></i>Stock Disponible
+                        </label>
+                        <input asp-for="Stock" class="insta-input" placeholder="Cantidad en inventario">
+                        <span asp-validation-for="Stock" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="CategoriaId" class="insta-label">
+                            <i class="fas fa-list-alt me-2"></i>Categoría
+                        </label>
+                        <select asp-for="CategoriaId" class="insta-select" asp-items="ViewBag.CategoriaId">
+                            <option value="">Seleccione categoría</option>
+                        </select>
+                        <span asp-validation-for="CategoriaId" class="insta-validation"></span>
+                    </div>
+
+                    <!-- Acciones -->
+                    <div class="insta-form-footer mt-5">
+                        <button type="submit" class="insta-submit-btn insta-update-btn">
+                            <i class="fas fa-save me-2"></i>Guardar Cambios
+                        </button>
+                        <a asp-action="Index" class="insta-cancel-btn">
+                            <i class="fas fa-times me-2"></i>Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

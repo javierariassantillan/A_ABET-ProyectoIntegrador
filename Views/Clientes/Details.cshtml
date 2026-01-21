@@ -1,0 +1,69 @@
+﻿@model RubiaDivina.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-details-card">
+        <div class="insta-details-header mb-4">
+            <h1 class="insta-main-title">
+                <i class="fas fa-user-circle me-2"></i>@Model.Nombre @Model.Apellido
+            </h1>
+            <p class="insta-subtitle">Detalles completos del cliente</p>
+            <hr class="insta-hr">
+        </div>
+
+        <div class="insta-details-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-user me-2"></i>Nombre:
+                        </div>
+                        <div class="insta-detail-value">@Model.Nombre</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-user-tag me-2"></i>Apellido:
+                        </div>
+                        <div class="insta-detail-value">@Model.Apellido</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-calendar-alt me-2"></i>Fecha Registro:
+                        </div>
+                        <div class="insta-detail-value">@Model.FechaCreacion.ToString("dd MMM yyyy")</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-mobile-alt me-2"></i>Teléfono:
+                        </div>
+                        <div class="insta-detail-value">@Model.Telefono</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-envelope me-2"></i>Correo:
+                        </div>
+                        <div class="insta-detail-value">@Model.Correo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insta-details-actions mt-5">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="insta-edit-btn">
+                <i class="fas fa-edit me-2"></i>Editar
+            </a>
+            <a asp-action="Index" class="insta-cancel-link">
+                <i class="fas fa-arrow-left me-2"></i>Volver al Listado
+            </a>
+        </div>
+    </div>
+</div>

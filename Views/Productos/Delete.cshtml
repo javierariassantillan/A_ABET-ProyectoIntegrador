@@ -1,0 +1,67 @@
+﻿@model RubiaDivina.Models.Producto
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-delete-card">
+        <div class="insta-delete-header mb-4">
+            <h1 class="insta-main-title text-danger">
+                <i class="fas fa-exclamation-triangle me-2"></i>Eliminar Producto
+            </h1>
+            <p class="insta-subtitle">¿Estás seguro que deseas eliminar este producto permanentemente?</p>
+            <hr class="insta-hr">
+        </div>
+
+        <!-- Detalles del Producto -->
+        <div class="insta-delete-details">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <span class="insta-detail-label">
+                            <i class="fas fa-tag me-2"></i>Nombre:
+                        </span>
+                        <span class="insta-detail-value">@Model.Nombre</span>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <span class="insta-detail-label">
+                            <i class="fas fa-dollar-sign me-2"></i>Precio:
+                        </span>
+                        <span class="insta-detail-value">@Model.Precio.ToString("C")</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <span class="insta-detail-label">
+                            <i class="fas fa-boxes me-2"></i>Stock:
+                        </span>
+                        <span class="insta-detail-value">@Model.Stock unidades</span>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <span class="insta-detail-label">
+                            <i class="fas fa-list-alt me-2"></i>Categoría:
+                        </span>
+                        <span class="insta-detail-value">@Model.Categoria.Nombre</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de Eliminación -->
+        <form asp-action="Delete" class="mt-5">
+            <input type="hidden" asp-for="Id" />
+            <div class="insta-delete-actions">
+                <button type="submit" class="insta-delete-btn">
+                    <i class="fas fa-trash-alt me-2"></i>Confirmar Eliminación
+                </button>
+                <a asp-action="Index" class="insta-cancel-link">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al Listado
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

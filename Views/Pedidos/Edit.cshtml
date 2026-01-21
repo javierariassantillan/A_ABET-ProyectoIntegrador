@@ -1,0 +1,95 @@
+﻿@model RubiaDivina.Models.Pedido
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-form-card">
+        <div class="insta-form-header mb-4">
+            <h1 class="insta-main-title">
+                <i class="fas fa-edit me-2"></i>Editar Pedido
+            </h1>
+            <p class="insta-subtitle">Actualiza la información del pedido</p>
+            <hr class="insta-hr">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form asp-action="Edit" class="insta-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="insta-form-group">
+                        <label class="insta-label">
+                            <i class="fas fa-user me-2"></i>Cliente
+                        </label>
+                        <select asp-for="ClienteId" class="insta-select" asp-items="ViewBag.ClienteId">
+                            <option value="">Seleccione un cliente</option>
+                        </select>
+                        <span asp-validation-for="ClienteId" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label class="insta-label">
+                            <i class="fas fa-coffee me-2"></i>Producto
+                        </label>
+                        <select asp-for="ProductoId" class="insta-select" asp-items="ViewBag.ProductoId">
+                            <option value="">Seleccione un producto</option>
+                        </select>
+                        <span asp-validation-for="ProductoId" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label class="insta-label">
+                            <i class="fas fa-dollar-sign me-2"></i>Valor Total
+                        </label>
+                        <input asp-for="ValorTotal" class="insta-input" placeholder="Ej: 25.99">
+                        <span asp-validation-for="ValorTotal" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <div class="insta-checkbox">
+                            <input asp-for="Pagado" class="form-check-input" />
+                            <label class="insta-label">
+                                <i class="fas fa-check-circle me-2"></i>¿Pedido pagado?
+                            </label>
+                        </div>
+                        <span asp-validation-for="Pagado" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label class="insta-label">
+                            <i class="fas fa-calendar-day me-2"></i>Fecha de Solicitud
+                        </label>
+                        <input asp-for="FechaSolicitud" class="insta-input" type="datetime-local">
+                        <span asp-validation-for="FechaSolicitud" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label class="insta-label">
+                            <i class="fas fa-calendar-check me-2"></i>Fecha de Pago
+                        </label>
+                        <input asp-for="FechaPago" class="insta-input" type="datetime-local">
+                        <span asp-validation-for="FechaPago" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-footer mt-5">
+                        <button type="submit" class="insta-submit-btn insta-update-btn">
+                            <i class="fas fa-save me-2"></i>Guardar Cambios
+                        </button>
+                        <a asp-action="Index" class="insta-cancel-link">
+                            <i class="fas fa-times me-2"></i>Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

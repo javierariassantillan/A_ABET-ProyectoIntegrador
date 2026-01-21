@@ -1,0 +1,86 @@
+﻿@model RubiaDivina.Models.Pedido
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-delete-card">
+        <div class="insta-delete-header mb-4">
+            <h1 class="insta-main-title text-danger">
+                <i class="fas fa-exclamation-triangle me-2"></i>Eliminar Pedido
+            </h1>
+            <p class="insta-subtitle">¿Estás seguro de eliminar este pedido permanentemente?</p>
+            <hr class="insta-hr">
+        </div>
+
+        <div class="insta-delete-details">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-user me-2"></i>Cliente:
+                        </div>
+                        <div class="insta-detail-value">@Model.Cliente.Nombre @Model.Cliente.Apellido</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-coffee me-2"></i>Producto:
+                        </div>
+                        <div class="insta-detail-value">@Model.Producto.Nombre</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-dollar-sign me-2"></i>Valor Total:
+                        </div>
+                        <div class="insta-detail-value">@string.Format(new System.Globalization.CultureInfo("es-CO"), "{0:C}", Model.ValorTotal)</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-calendar-day me-2"></i>Fecha Solicitud:
+                        </div>
+                        <div class="insta-detail-value">@Model.FechaSolicitud.ToString("dd MMM yyyy")</div>
+                    </div>
+
+                    <div class="insta-detail-item">
+                        <div class="insta-detail-label">
+                            <i class="fas fa-check-circle me-2"></i>Estado:
+                        </div>
+                        <div class="insta-detail-value">
+                            <span class="badge @(Model.Pagado ? "insta-paid" : "insta-pending")">
+                                @(Model.Pagado ? "Pagado" : "Pendiente")
+                            </span>
+                        </div>
+                    </div>
+
+                    @if (Model.Pagado)
+                    {
+                        <div class="insta-detail-item">
+                            <div class="insta-detail-label">
+                                <i class="fas fa-calendar-check me-2"></i>Fecha Pago:
+                            </div>
+                            <div class="insta-detail-value">@Model.FechaPago?.ToString("dd MMM yyyy")</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <form asp-action="Delete" class="mt-5">
+            <input type="hidden" asp-for="Id" />
+            <div class="insta-delete-actions">
+                <button type="submit" class="insta-delete-btn">
+                    <i class="fas fa-trash-alt me-2"></i>Confirmar Eliminación
+                </button>
+                <a asp-action="Index" class="insta-cancel-link">
+                    <i class="fas fa-arrow-left me-2"></i>Volver a Pedidos
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

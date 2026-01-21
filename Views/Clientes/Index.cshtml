@@ -1,0 +1,52 @@
+﻿@model IEnumerable<RubiaDivina.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<div class="container insta-container py-5">
+    <div class="profile-header mb-5">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 font-weight-light">@ViewData["Title"]</h1>
+            <a asp-action="Create" class="btn btn-primary insta-btn">
+                <i class="fas fa-plus"></i> Nuevo Cliente
+            </a>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col mb-4">
+                <div class="card insta-card shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="insta-title">@item.Nombre @item.Apellido</h5>
+                            <span class="badge insta-category">@item.FechaCreacion.ToString("dd MMM yy")</span>
+                        </div>
+                        <div class="insta-client-details">
+                            <div class="insta-detail-item">
+                                <span>@item.Telefono</span>
+                            </div>
+                            <div class="insta-detail-item">
+                                <span>@item.Correo</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm insta-edit-btn">
+                                        <i class="fas fa-edit">Editar</i>
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm insta-details-btn">
+                                        <i class="fas fa-info-circle">Info</i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm insta-delete-btn">
+                                        <i class="fas fa-trash-alt">Borrar</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

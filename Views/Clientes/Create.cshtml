@@ -1,0 +1,78 @@
+﻿@model RubiaDivina.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container insta-container py-5">
+    <div class="insta-form-card">
+        <div class="insta-form-header mb-4">
+            <h1 class="insta-main-title">Nuevo Cliente</h1>
+            <p class="insta-subtitle">Registra un nuevo cliente en el sistema</p>
+            <hr class="insta-hr">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form asp-action="Create" class="insta-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="Nombre" class="insta-label">
+                            <i class="fas fa-user me-2"></i>Nombre
+                        </label>
+                        <input asp-for="Nombre" class="insta-input" placeholder="Ej: María">
+                        <span asp-validation-for="Nombre" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="Apellido" class="insta-label">
+                            <i class="fas fa-user-tag me-2"></i>Apellido
+                        </label>
+                        <input asp-for="Apellido" class="insta-input" placeholder="Ej: González">
+                        <span asp-validation-for="Apellido" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="Telefono" class="insta-label">
+                            <i class="fas fa-mobile-alt me-2"></i>Teléfono
+                        </label>
+                        <input asp-for="Telefono" class="insta-input" placeholder="Ej: 0991234567">
+                        <span asp-validation-for="Telefono" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="Correo" class="insta-label">
+                            <i class="fas fa-envelope me-2"></i>Correo
+                        </label>
+                        <input asp-for="Correo" class="insta-input" placeholder="Ej: cliente@ejemplo.com">
+                        <span asp-validation-for="Correo" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-group">
+                        <label asp-for="FechaCreacion" class="insta-label">
+                            <i class="fas fa-calendar-alt me-2"></i>Fecha de Registro
+                        </label>
+                        <input asp-for="FechaCreacion" class="insta-input" type="date">
+                        <span asp-validation-for="FechaCreacion" class="insta-validation"></span>
+                    </div>
+
+                    <div class="insta-form-footer mt-5">
+                        <button type="submit" class="insta-submit-btn">
+                            <i class="fas fa-user-plus me-2"></i>Crear Cliente
+                        </button>
+                        <a asp-action="Index" class="insta-cancel-link">
+                            <i class="fas fa-arrow-left me-2"></i>Volver al Listado
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
